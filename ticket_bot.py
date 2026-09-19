@@ -8,7 +8,7 @@ GUILD_ID = 1548721753570680872          # 서버 ID
 TICKET_CATEGORY_ID = 1548722663822860400 # 티켓 채널이 모일 카테고리 ID
 ADMIN_ROLE_ID = 1548722627760234629      # 관리자 역할 ID
 TICKET_LOG_CHANNEL_ID = 1549075828422213773 # 티켓 로그 채널 ID
-BOT_TOKEN = "MTU0OTAzMTY4MzYyNDQwNzIwMQ.G_ezhn.nM23PX_833PJ-SJpzlYJviR-vlrfne3HyGrvho"
+BOT_TOKEN = "MTU0OTAzMTY4MzYyNDQwNzIwMQ.GsasFO.xKL6OTEqnVO2SvkZzuBJPNKIa7tz1zmqrMSYzQ"
 # =================================================
 
 intents = discord.Intents.default()
