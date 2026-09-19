@@ -2,13 +2,16 @@ import discord
 from discord import app_commands
 from discord.ui import View, Button, Select
 import asyncio
+import os
 
 # ===================== 설정 =====================
 GUILD_ID = 1548721753570680872          # 서버 ID
 TICKET_CATEGORY_ID = 1548722663822860400 # 티켓 채널이 모일 카테고리 ID
 ADMIN_ROLE_ID = 1548722627760234629      # 관리자 역할 ID
 TICKET_LOG_CHANNEL_ID = 1549075828422213773 # 티켓 로그 채널 ID
-BOT_TOKEN = "MTU0OTAzMTY4MzYyNDQwNzIwMQ.GsasFO.xKL6OTEqnVO2SvkZzuBJPNKIa7tz1zmqrMSYzQ"
+
+# 렌더(Render) 환경 변수에서 토큰을 안전하게 불러옵니다.
+BOT_TOKEN = os.getenv("MTU0OTAzMTY4MzYyNDQwNzIwMQ.GsasFO.xKL6OTEqnVO2SvkZzuBJPNKIa7tz1zmqrMSYzQ")
 # =================================================
 
 intents = discord.Intents.default()
@@ -41,7 +44,7 @@ class TicketSelect(Select):
 
         ticket_type = self.values[0]
         
-        # 수정됨: get_category 대신 get_channel 사용
+        # 카테고리 가져오기
         category = interaction.guild.get_channel(TICKET_CATEGORY_ID)
         if not category:
             return await interaction.followup.send("❌ 티켓 카테고리를 찾을 수 없습니다! 카테고리 ID를 확인해주세요.", ephemeral=True)
@@ -155,4 +158,7 @@ async def on_ready():
     print(f"✅ 티켓봇 온라인: {bot.user}")
     print(f"✅ /인증패널설치 명령어 동기화 완료")
 
-bot.run(BOT_TOKEN)
+if BOT_TOKEN:
+    bot.run(BOT_TOKEN)
+else:
+    print("❌ Error: DISCORD_TOKEN 환경 변수가 설정되지 않았습니다!")
