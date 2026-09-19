@@ -11,7 +11,7 @@ ADMIN_ROLE_ID = 1548722627760234629      # 관리자 역할 ID
 TICKET_LOG_CHANNEL_ID = 1549075828422213773 # 티켓 로그 채널 ID
 
 # 렌더(Render) 환경 변수에서 토큰을 안전하게 불러옵니다.
-BOT_TOKEN = os.getenv("MTU0OTAzMTY4MzYyNDQwNzIwMQ.GsasFO.xKL6OTEqnVO2SvkZzuBJPNKIa7tz1zmqrMSYzQ")
+BOT_TOKEN = os.getenv("MTU0OTAzMTY4MzYyNDQwNzIwMQ.GHkVsi.xQ_usPRJCCJFk-gzPvbceRTia9gQOOzF0svAyM")
 # =================================================
 
 intents = discord.Intents.default()
